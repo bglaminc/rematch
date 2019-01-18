@@ -4,7 +4,6 @@ npm-debug.*
 
 # build
 lib
-dist
 .rpt2_cache
 
 # editor
