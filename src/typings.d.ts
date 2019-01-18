@@ -73,7 +73,8 @@ export type RematchDispatcherAsync<P = void, M = void> =
 
 export type RematchDispatch<M extends Models | void = void> =
   (M extends Models
-    ? ExtractRematchDispatchersFromModels<M>
+    // ? ExtractRematchDispatchersFromModels<M>
+    ? any
     : {
       [key: string]: {
         [key: string]: RematchDispatcher | RematchDispatcherAsync;
