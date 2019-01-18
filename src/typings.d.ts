@@ -73,7 +73,8 @@ export type RematchDispatcherAsync<P = void, M = void> =
 
 export type RematchDispatch<M extends Models | void = void> =
   (M extends Models
-    ? ExtractRematchDispatchersFromModels<M>
+    // ? ExtractRematchDispatchersFromModels<M>
+    ? any
     : {
       [key: string]: {
         [key: string]: RematchDispatcher | RematchDispatcherAsync;
@@ -103,7 +104,8 @@ export interface RematchStore<M extends Models = Models, A extends Action = Acti
   extends Redux.Store<RematchRootState<M>, A> {
   name: string,
   replaceReducer(nextReducer: Redux.Reducer<RematchRootState<M>, A>): void,
-  dispatch: RematchDispatch<M>,
+  // dispatch: RematchDispatch<M>,
+  dispatch: any,
   getState(): RematchRootState<M>,
   model(model: Model): void,
   subscribe(listener: () => void): Redux.Unsubscribe,
