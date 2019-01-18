@@ -104,8 +104,7 @@ export interface RematchStore<M extends Models = Models, A extends Action = Acti
   extends Redux.Store<RematchRootState<M>, A> {
   name: string,
   replaceReducer(nextReducer: Redux.Reducer<RematchRootState<M>, A>): void,
-  // dispatch: RematchDispatch<M>,
-  dispatch: any,
+  dispatch: RematchDispatch<M>,
   getState(): RematchRootState<M>,
   model(model: Model): void,
   subscribe(listener: () => void): Redux.Unsubscribe,
